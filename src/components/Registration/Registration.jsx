@@ -2,6 +2,10 @@ import React from "react";
 import { Container } from "react-bootstrap";
 
 const Registration = () => {
+   
+ const handleEmailChange=(event)=>{
+            console.log(event.target.value)
+ }
   return (
     <Container className="mx-5 w-25% ">
       <h1>Please register</h1>
@@ -25,6 +29,7 @@ const Registration = () => {
             Email address
           </label>
           <input
+             onChange={handleEmailChange}
             type="email"
             className="form-control"
            required

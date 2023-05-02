@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <div className="mx-auto ">
-      <Navbar collapseOnSelect expand="lg" bg="info" variant="secondary">
+      <Navbar collapseOnSelect expand="lg" bg="light" variant="secondary" className="opacity-75">
         <Container>
           <Link className="text-decoration-none">
             <Navbar.Brand>Bangalore-Garden-Cafe</Navbar.Brand>
