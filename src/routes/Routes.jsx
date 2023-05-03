@@ -5,6 +5,7 @@ import Registration from "../components/Registration/Registration";
 import Main from "../layouts/Main";
 import Blogs from "../Pages/Blogs/Blogs";
 import Home from "../Pages/Home/Home/Home";
+import ChefDetails from'./../Pages/ChefDetails/ChefDetails'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+
       {
         path: "/login",
         element: <Login />,
@@ -22,15 +24,18 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Registration />,
-      },{
-        path:"/blog",
-        element:<Blogs/>
+      },
+      
+      {
+        path: "/blog",
+        element: <Blogs />,
+      },
+      {
+        path:"/chefdetails",
+        element:<ChefDetails/>
       }
-
-    ]
-  }
- 
-  
+    ],
+  },
 ]);
 
 export default router;

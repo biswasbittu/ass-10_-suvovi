@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./Login.css"
 import {  FaGithub, FaGoogle } from 'react-icons/fa';
@@ -8,6 +8,9 @@ import { AuthContext } from '../../Provider/AuthProvider';
 const Login = () => {
 
     const {signInUser} =useContext(AuthContext);
+      const [success,setSuccess]=useState('');
+      const[error,setError]=useState('')
+
 
     const handleLogin=(event)=>{
         event.preventDefault();
@@ -19,10 +22,16 @@ const Login = () => {
         .then((result)=>{
             const loggedUser=result.user;
             console.log(loggedUser)
+            setSuccess("Login successfull");
+            setError("");
+
+
 
         })
         .catch((error)=>{
             console.log(error)
+            setError(error.message);
+            setSuccess("")
         })
     }
 
@@ -43,12 +52,18 @@ const Login = () => {
                     <label htmlFor='password' >Password</label>
                     <input type="password" name='password' placeholder='Enter your Password' className='form-control'/>
                  </div>
+                 <div>
+                    <p className="text-success"><small>{success}</small></p>
+                    <p className='text-danger'><small>{error}</small></p>
+                 </div>
 
                 <div className='d-grid mb-2'>
                     <button className='btn btn-primary'>Sign in</button>
 
                 </div>
-                <div className='d-grid mb-2'>
+                
+               </form>
+               <div className='d-grid mb-2'>
                     <button className='btn btn-primary'><FaGoogle/>  Google</button>
 
                 </div>
@@ -56,7 +71,6 @@ const Login = () => {
                     <button className='btn btn-primary'><FaGithub/>  Github</button>
 
                 </div>
-               </form>
                <p className='text-end mt-2'><small>Don't have an account? Plaese! <span><Link to="/register">Sign Up</Link></span></small></p>
            </div>
         </div>
