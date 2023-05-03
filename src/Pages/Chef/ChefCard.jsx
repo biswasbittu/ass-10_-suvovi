@@ -4,7 +4,7 @@ import { FaThumbsUp } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const ChefCard = ({chefData}) => {
-  console.log(chefData)
+  // console.log(chefData)
   const {chefName,chefPicture,yearsOfExperience,likes}=chefData
   return (
     <div>

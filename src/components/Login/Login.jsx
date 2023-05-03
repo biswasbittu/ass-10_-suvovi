@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import "./Login.css"
 import {  FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Provider/AuthProvider';
@@ -11,6 +11,10 @@ const Login = () => {
       const [success,setSuccess]=useState('');
       const[error,setError]=useState('')
       const navigate =useNavigate();
+      const location =useLocation();
+
+      console.log("login page location",location)
+      const from = location.state?.from?.pathname || "/"
 
 
 
@@ -26,7 +30,7 @@ const Login = () => {
             // console.log(loggedUser)
             setSuccess("Login successfull");
             setError("");
-            navigate("/")
+            navigate(from,{replace:true})
 
 
 
