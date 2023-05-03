@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "./Login.css"
 import {  FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Provider/AuthProvider';
@@ -10,6 +10,8 @@ const Login = () => {
     const {signInUser} =useContext(AuthContext);
       const [success,setSuccess]=useState('');
       const[error,setError]=useState('')
+      const navigate =useNavigate();
+
 
 
     const handleLogin=(event)=>{
@@ -21,15 +23,16 @@ const Login = () => {
         signInUser(email,password)
         .then((result)=>{
             const loggedUser=result.user;
-            console.log(loggedUser)
+            // console.log(loggedUser)
             setSuccess("Login successfull");
             setError("");
+            navigate("/")
 
 
 
         })
         .catch((error)=>{
-            console.log(error)
+            // console.log(error)
             setError(error.message);
             setSuccess("")
         })

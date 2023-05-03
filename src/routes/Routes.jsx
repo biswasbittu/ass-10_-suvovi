@@ -6,6 +6,7 @@ import Main from "../layouts/Main";
 import Blogs from "../Pages/Blogs/Blogs";
 import Home from "../Pages/Home/Home/Home";
 import ChefDetails from'./../Pages/ChefDetails/ChefDetails'
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -28,11 +29,11 @@ const router = createBrowserRouter([
       
       {
         path: "/blog",
-        element: <Blogs />,
+        element: <PrivateRoute><Blogs /></PrivateRoute>,
       },
       {
         path:"/chefdetails",
-        element:<ChefDetails/>
+        element:<PrivateRoute><ChefDetails/></PrivateRoute>
       }
     ],
   },
