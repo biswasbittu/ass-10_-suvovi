@@ -19,14 +19,7 @@ const NavBar = () => {
             <Nav>
               <Nav.Link href="#deets">User Profile</Nav.Link>
 
-              <Nav.Link
-                className="text-light fw-semibold"
-                eventKey={2}
-                href="#memes"
-              >
-                <Button variant="secondary ">LogIn</Button>
-              </Nav.Link>
-              
+             <Link to="/login"><Button variant="secondary ">LogIn</Button></Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

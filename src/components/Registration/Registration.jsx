@@ -1,71 +1,55 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import {  FaGithub, FaGoogle } from 'react-icons/fa';
+
 
 const Registration = () => {
    
- const handleEmailChange=(event)=>{
-            console.log(event.target.value)
- }
+ 
   return (
-    <Container className="mx-5 w-25% ">
-      <h1>Please register</h1>
+    <div className='signup template d-flex justify-content-center align-items-center 100-w vh-100 bg-primary'>
+           <div className='form_container p-5  rounded bg-white'>
+               <form >
+                 <h3 className='text-center'>Sign Up</h3>
+                 <div className='mb-2'>
+                    <label htmlFor='name' >Full Name</label>
+                    <input type="text" name='name' placeholder='Enter your Full-Name' className='form-control'/>
+                 </div>
 
-      <form>
-        <div classname="mb-3">
-          <label  className="form-label">
-            Your Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            className="form-control"      
-            required
-          />
-          
-        </div>
+                 {/* Email */}
+                 <div className='mb-2'>
+                    <label htmlFor='email' >Email</label>
+                    <input type="email" name='email' placeholder='Enter your Email' className='form-control'/>
+                 </div>
 
-        <div className="mb-3">
-          <label  className="form-label">
-            Email address
-          </label>
-          <input
-             onChange={handleEmailChange}
-            type="email"
-            className="form-control"
-           required
-          />
-        </div>
-        
-        <div className="mb-3">
-          <label for="exampleInputPassword1" className="form-label">
-            Password
-          </label>
-          <input
-            type="password"
-            className="form-control"
-            id="exampleInputPassword1"
-            required
-          />
-        </div>
-        
-        <div classname="mb-3">
-          <label  className="form-label">
-            Photo url
-          </label>
-          <input
-            type="text"
-            name="name"
-            className="form-control"      
-            required
-          />
-          
-        </div>
 
-        <button type="submit" className="btn btn-primary mt-3">
-          Register
-        </button>
-      </form>
-    </Container>
+                 {/* Password  */}
+                 <div className='mb-2'>
+                    <label htmlFor='password' >Password</label>
+                    <input type="password" name='password' placeholder='Enter your Password' className='form-control'/>
+                 </div>
+
+                 <div className='mb-2'>
+                    <label htmlFor='purl' >Photo url</label>
+                    <input type="text" name='name' placeholder='Enter your Full-Name' className='form-control'/>
+                 </div>
+
+                <div className='d-grid mb-2'>
+                    <button className='btn btn-primary'>Sign in</button>
+
+                </div>
+                <div className='d-grid mb-2'>
+                    <button className='btn btn-primary'><FaGoogle/>  Google</button>
+
+                </div>
+                <div className='d-grid'>
+                    <button className='btn btn-primary'><FaGithub/>  Github</button>
+
+                </div>
+               </form>
+               <p className='text-end mt-2'><small>Already have an Account please! <span><Link to="/login">Sign In</Link></span></small></p>
+           </div>
+        </div>
     
   );
 };
