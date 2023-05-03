@@ -1,10 +1,13 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
+import Header from "../../Shared/Header/Header";
 import "./Home.css";
 
 const Home = () => {
   return (
-    <div className="home-bg">
+   <div>
+    <Header/>
+     <div className="home-bg">
       <h1 className="text-center">THE TEAM</h1>
       <div className="container">
         <Card style={{ width: "18rem" }}>
@@ -20,6 +23,7 @@ const Home = () => {
         </Card>
       </div>
     </div>
+   </div>
   );
 };
 

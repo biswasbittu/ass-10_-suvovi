@@ -36,7 +36,7 @@ const Login = () => {
 
                 </div>
                </form>
-               <p className='text-end mt-2'><small>If you are new Plaese! <span><Link to="/register">Sign Up</Link></span></small></p>
+               <p className='text-end mt-2'><small>Don't have an account? Plaese! <span><Link to="/register">Sign Up</Link></span></small></p>
            </div>
         </div>
     );

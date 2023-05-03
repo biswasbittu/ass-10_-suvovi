@@ -6,7 +6,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <div className="header-css bg-img">
-      <NavBar />
+      
       <div className=" position-absolute top-50 start-50 translate-middle ">
         <h1 className="  text-center text-info">
           Bangalore-Garden-Cafe
