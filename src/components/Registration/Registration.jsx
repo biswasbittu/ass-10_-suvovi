@@ -9,7 +9,6 @@ const Registration = () => {
   // const {registerUser}=useContext(AuthContext);
 
   const [success, setSuccess] = useState("");
-
   const [error, setError] = useState("");
 
   const handleRegister = (event) => {
@@ -24,12 +23,12 @@ const Registration = () => {
     registerUser(name, photo, email, password)
       .then((result) => {
         const creatUser = result.user;
-        console.log(creatUser);
+        // console.log(creatUser);
         setSuccess("Registration successfull");
         setError("");
       })
       .catch((error) => {
-        console.log(error.message);
+        // console.log(error.message);
         setError(error.message);
         setSuccess("");
       });
@@ -43,7 +42,7 @@ const Registration = () => {
             <div className="mb-2">
               <label htmlFor="name">Full Name</label>
               <input
-                // onChange={(e)=>setName(e.target.value)}
+                
                 type="text"
                 name="name"
                 placeholder="Enter your Full-Name"
@@ -55,7 +54,7 @@ const Registration = () => {
             <div className="mb-2">
               <label htmlFor="purl">Photo url</label>
               <input
-                // onChange={(e)=>setPhoto(e.target.value)}
+                
                 type="text"
                 name="photo"
                 placeholder="Enter your photo url"
@@ -68,7 +67,7 @@ const Registration = () => {
             <div className="mb-2">
               <label htmlFor="email">Email</label>
               <input
-                // onChange={(e)=>setEmail(e.target.value)}
+               
                 type="email"
                 name="email"
                 placeholder="Enter your Email"
@@ -81,7 +80,7 @@ const Registration = () => {
             <div className="mb-2">
               <label htmlFor="password">Password</label>
               <input
-                // onChange={(e)=>setPassword(e.target.value)}
+                
                 type="password"
                 name="password"
                 placeholder="Enter your Password"
@@ -89,7 +88,7 @@ const Registration = () => {
                 required
               />
             </div>
-            <p className="text-warning">
+            <p className="text-danger">
               <small>{error}</small>
             </p>
             <p className="text-success">
