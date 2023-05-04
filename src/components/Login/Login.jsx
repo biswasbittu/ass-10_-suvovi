@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import "./Login.css"
 import {  FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import app from '../../firebase/firebase.config';
 
 
 const Login = () => {
@@ -41,6 +43,30 @@ const Login = () => {
             setSuccess("")
         })
     }
+//   Google Log In...........
+
+    const auth= getAuth(app);
+    const provider= new GoogleAuthProvider();
+
+
+   const handleGoogleSignIn=()=>{
+    signInWithPopup(auth,provider)
+    .then((result)=>{
+        setSuccess("Login successfull");
+        setError("");
+        navigate(from,{replace:true})
+    })
+    .catch((error)=>{
+        console.log(error)
+        setError(error.message);
+        setSuccess("")
+    })
+   }
+ 
+   const handleGithunSignIn=()=>{
+    console.log("Github mama is Comming")
+   }
+
 
     return (
         <div className='login template d-flex justify-content-center align-items-center 100-w vh-100 bg-primary'>
@@ -71,11 +97,11 @@ const Login = () => {
                 
                </form>
                <div className='d-grid mb-2'>
-                    <button className='btn btn-primary'><FaGoogle/>  Google</button>
+                    <button className='btn btn-primary' onClick={handleGoogleSignIn}><FaGoogle/>  Google</button>
 
                 </div>
                 <div className='d-grid'>
-                    <button className='btn btn-primary'><FaGithub/>  Github</button>
+                    <button className='btn btn-primary' onClick={handleGithunSignIn}><FaGithub/>  Github</button>
 
                 </div>
                <p className='text-end mt-2'><small>Don't have an account? Plaese! <span><Link to="/register">Sign Up</Link></span></small></p>

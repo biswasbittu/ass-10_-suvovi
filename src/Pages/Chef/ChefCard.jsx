@@ -12,9 +12,9 @@ const ChefCard = ({chefData}) => {
   <div className="row">
     <div className="col">
       <div className="card">
-        <img src="your-image-url" className="card-img-top" alt="Card Image"/>
+        <img src={chefPicture} className="card-img-top" alt="Card Image"/>
         <div className="card-body">
-          <h5 className="card-title">Chef Name</h5>
+          <h5 className="card-title">{chefName}</h5>
           <p className="card-text">Years of experience: 5</p>
           <p className="card-text">Numbers of recipes: 50</p>
           <p className="card-text">Likes: 100</p>
