@@ -98,10 +98,10 @@ const Registration = () => {
             {/* Button section */}
 
             <div className="d-grid mb-2">
-              <button className="btn btn-primary">Sign in</button>
+              <button className="btn btn-primary">Sign Up</button>
             </div>
           </form>
-          <div className="d-grid mb-2">
+          {/* <div className="d-grid mb-2">
             <button className="btn btn-primary">
               <FaGoogle /> Google
             </button>
@@ -110,7 +110,7 @@ const Registration = () => {
             <button className="btn btn-primary">
               <FaGithub /> Github
             </button>
-          </div>
+          </div> */}
           <p className="text-end mt-2">
             <small>
               Already have an Account please!{" "}

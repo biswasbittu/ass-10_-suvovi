@@ -18,7 +18,7 @@ const NavBar = () => {
         expand="lg"
         bg="light"
         variant="secondary"
-        className="opacity-75"
+        className=""
       >
         <Container>
           <Link className="text-decoration-none">
@@ -26,7 +26,7 @@ const NavBar = () => {
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mx-auto d-flex gap-4 ">
+            <Nav className="mx-auto d-flex gap-4 fs-2 fw-4 ">
               <Link className="text-decoration-none text-dark" to="/">
                 Home
               </Link>
