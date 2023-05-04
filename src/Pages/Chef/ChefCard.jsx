@@ -8,30 +8,24 @@ const ChefCard = ({chefData}) => {
   const {chefName,chefPicture,yearsOfExperience,likes}=chefData
   return (
     <div>
-      <div className="home-bg">
-       
-        <div className="container col-1 ">
-          <Card style={{ width: "18rem" }}>
-           <div className="p-2">
-           <Card.Img  variant="top" src={chefPicture}/>
-           </div>
-            <Card.Body>
-              <Card.Title>Name: <span className='text-warning'>{chefName}</span> </Card.Title>
-              <div>
-                <p>Year Of Experience:{yearsOfExperience}</p>
-              </div>
-              <p> <FaThumbsUp/> {likes}</p>
-
-              {/* <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text> */}
-              <Link to="/chefdetails"> <Button variant="primary">Go somewhere</Button></Link>
-             
-            </Card.Body>
-          </Card>
+      <div className="container">
+  <div className="row">
+    <div className="col">
+      <div className="card">
+        <img src="your-image-url" className="card-img-top" alt="Card Image"/>
+        <div className="card-body">
+          <h5 className="card-title">Chef Name</h5>
+          <p className="card-text">Years of experience: 5</p>
+          <p className="card-text">Numbers of recipes: 50</p>
+          <p className="card-text">Likes: 100</p>
+          <Link to="/chefdetails" className="btn btn-primary">View Recipes</Link>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+
     </div>
   );
 };

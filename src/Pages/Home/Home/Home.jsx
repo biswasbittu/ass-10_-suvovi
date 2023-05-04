@@ -19,7 +19,7 @@ const Home = () => {
    <div>
     <Header/>
     <h1 className="text-center">THE TEAM</h1>
-     <div className="container  d-flex " >
+     <div className="container  d-flex  " >
      {
       chefDatas.map(chefData=><ChefCard key={chefData.id}
         chefData={chefData}></ChefCard>)
