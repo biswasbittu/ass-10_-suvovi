@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import "./Login.css"
 import {  FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Provider/AuthProvider';
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 
 
@@ -46,11 +46,10 @@ const Login = () => {
 //   Google Log In...........
 
     const auth= getAuth(app);
-    const provider= new GoogleAuthProvider();
-
+    const GoogleProvider= new GoogleAuthProvider();
 
    const handleGoogleSignIn=()=>{
-    signInWithPopup(auth,provider)
+    signInWithPopup(auth,GoogleProvider)
     .then((result)=>{
         setSuccess("Login successfull");
         setError("");
@@ -62,9 +61,20 @@ const Login = () => {
         setSuccess("")
     })
    }
- 
+//  Github login...........
+   const githubProvider= new GithubAuthProvider()
    const handleGithunSignIn=()=>{
-    console.log("Github mama is Comming")
+     signInWithPopup(auth,githubProvider)
+     .then((result)=>{
+        setSuccess("Login successfull");
+        setError("");
+        navigate(from,{replace:true})
+     })
+     .catch((error)=>{
+        console.log(error)
+        setError(error.message);
+        setSuccess("")
+     })
    }
 
 
