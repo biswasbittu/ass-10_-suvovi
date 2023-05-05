@@ -5,11 +5,14 @@ import { FaThumbsUp } from "react-icons/fa";
 
 const chefDetails = () => {
    const singleData= useLoaderData();
-   const {chefName,chefPicture,description,numRecipes,yearsOfExperience,rating,likes
-
-
-   }=singleData
-   console.log(singleData)
+   const {chefName,chefPicture,description,numRecipes,yearsOfExperience,rating,likes}=singleData
+  //  console.log(singleData.recipes)
+   const recipes =singleData.recipes;
+   console.log( recipes)
+   for (const recipe of  recipes){
+    console.log(recipe)
+    const {name}=recipe
+   }
     return (
         <div>
         <Card className="text-center">

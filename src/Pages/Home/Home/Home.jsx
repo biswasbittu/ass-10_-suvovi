@@ -12,7 +12,7 @@ const Home = () => {
   const [chefDatas, setChefDatas] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allData")
+    fetch("https://assignment-10-server-biswasbittu.vercel.app/allData")
       .then((res) => res.json())
       .then((data) => setChefDatas(data));
   }, []);

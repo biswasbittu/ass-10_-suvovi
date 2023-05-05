@@ -1,11 +1,18 @@
 import React from "react";
 import Accordion from "react-bootstrap/Accordion";
+import Pdf from "react-to-pdf";
 
 const Blogs = () => {
+  const ref = React.createRef();
   return (
     <div className="container">
+      <div><Pdf targetRef={ref} filename="code-example.pdf">
+        {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+      </Pdf></div>
       <h1 className="text-center mb-4">Question</h1>
-      <Accordion defaultActiveKey="0" className="mb-5">
+     <div ref={ref}>
+      
+     <Accordion defaultActiveKey="0" className="mb-5">
         <Accordion.Item eventKey="0">
           <Accordion.Header>
             1.Tell us the differences between uncontrolled and controlled
@@ -78,6 +85,7 @@ const Blogs = () => {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
+     </div>
     </div>
   );
 };
