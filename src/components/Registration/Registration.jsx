@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const Registration = () => {
   const { registerUser } = useContext(AuthContext);
@@ -26,13 +27,36 @@ const Registration = () => {
         // console.log(creatUser);
         setSuccess("Registration successfull");
         setError("");
+        userProfile(result.user,name,photo)
       })
       .catch((error) => {
         // console.log(error.message);
         setError(error.message);
         setSuccess("");
       });
+
   };
+ 
+  const userProfile=(user,name,photo)=>{
+    updateProfile(user,{
+      displayName:name,
+      photoURL:photo
+    })
+    .then((result)=>{
+       const profile=result.user
+       console.log(profile)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+  }
+
+
+
+
+
+
+
   return (
     <div>
       <div className="signup template d-flex justify-content-center align-items-center 100-w vh-100 bg-primary">

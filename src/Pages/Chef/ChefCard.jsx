@@ -4,8 +4,9 @@ import { FaThumbsUp } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const ChefCard = ({chefData}) => {
-  // console.log(chefData)
-  const {chefName,chefPicture,yearsOfExperience,likes}=chefData
+  // console.log(chefData.chefPicture)
+  console.log()
+  const {chefName,chefPicture,yearsOfExperience,likes,numRecipes,id}=chefData
   return (
     <div>
       <div className="container">
@@ -15,10 +16,10 @@ const ChefCard = ({chefData}) => {
         <img src={chefPicture} className="card-img-top" alt="Card Image"/>
         <div className="card-body">
           <h5 className="card-title">{chefName}</h5>
-          <p className="card-text">Years of experience: 5</p>
-          <p className="card-text">Numbers of recipes: 50</p>
-          <p className="card-text">Likes: 100</p>
-          <Link to="/chefdetails" className="btn btn-primary">View Recipes</Link>
+          <p className="card-text">Years of experience: {yearsOfExperience}</p>
+          <p className="card-text">Numbers of recipes: {numRecipes}</p>
+          <p className="card-text">Likes: {likes}</p>
+          <Link to={`/chefdetails/${id}`} className="btn btn-primary">View Recipes</Link>
         </div>
       </div>
     </div>

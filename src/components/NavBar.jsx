@@ -35,11 +35,7 @@ const NavBar = () => {
               </Link>
             </Nav>
             <Nav>
-              {user && (
-                <FaUserCircle style={{ fontSize: "2rem" }}>
-                  User Profile
-                </FaUserCircle>
-              )}
+              {user ? <img title={user.displayName} className="border-raunded" src={user.photoURL} alt="" />:""}
 
               {user ? (
                 <Button onClick={handleLogOut} variant="secondary ">
